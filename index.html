@@ -1,67 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Barceló Eventos</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- Bootstrap CSS v5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
   <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
   <!-- Favicon -->
-  <link rel="icon" href="images/icono.png" type="image/png">
+  <link rel="icon" href="images/icono.png" type="image/png" />
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- Carrusel de fondo -->
+  <!-- Barra Superior Responsive -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 border-bottom">
+    <div class="container">
+      <!-- Logo pequeño o marca en nav en desktop-->
+      <a class="navbar-brand d-none d-lg-block" href="index.html">
+        <img src="images/logob.png" alt="Logo Barceló" class="nav-logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#topBar"
+        aria-controls="topBar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="topBar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item d-flex align-items-center me-3">
+            <i class="bi bi-envelope me-1"></i>
+            <a href="mailto:guatemalacity@barcelo.com" class="nav-link p-0">guatemalacity@barcelo.com</a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <i class="bi bi-telephone me-1"></i>
+            <a href="tel:+5022320400" class="nav-link p-0">+502 2320-400</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto flex-row">
+          <li class="nav-item me-3"><a href="#" class="nav-link p-0"><i class="bi bi-facebook"></i></a></li>
+          <li class="nav-item me-3"><a href="#" class="nav-link p-0"><i class="bi bi-twitter"></i></a></li>
+          <li class="nav-item me-3"><a href="#" class="nav-link p-0"><i class="bi bi-linkedin"></i></a></li>
+          <li class="nav-item me-3"><a href="#" class="nav-link p-0"><i class="bi bi-instagram"></i></a></li>
+          <li class="nav-item"><a href="#" class="nav-link p-0"><i class="bi bi-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrusel como fondo -->
   <header id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="images/Barcelo1.jpg" class="d-block w-100" alt="Hero 1">
+        <img src="images/Barcelo1.jpg" class="d-block w-100" alt="Slide 1" />
       </div>
       <div class="carousel-item">
-        <img src="images/Barcelo2.jpg" class="d-block w-100" alt="Hero 2">
+        <img src="images/Barcelo2.jpg" class="d-block w-100" alt="Slide 2" />
       </div>
-      <!-- Puedes añadir más slides aquí -->
+      <!-- Más slides si quieres -->
     </div>
   </header>
 
-  <!-- Todo el contenido va dentro de este overlay -->
-  <div class="content-overlay d-flex flex-column min-vh-100">
+  <!-- Overlay de contenido -->
+  <div class="content-overlay d-flex flex-column">
 
-    <!-- Top Bar con contacto y redes -->
-    <div class="bg-light py-2 border-bottom">
-      <div class="container d-flex justify-content-between align-items-center">
-        <div>
-          <i class="bi bi-envelope me-1"></i>
-          <a href="mailto:guatemalacity@barcelo.com" class="text-decoration-none text-dark">guatemalacity@barcelo.com</a>
-          <span class="mx-2">|</span>
-          <i class="bi bi-telephone me-1"></i>
-          <a href="tel:+50223204000" class="text-decoration-none text-dark">+502 2320-4000</a>
-        </div>
-        <div>
-          <a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-dark me-3"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="text-dark me-3"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-dark"><i class="bi bi-youtube"></i></a>
-        </div>
-      </div>
+    <!-- Logo grande centrado (visible en móvil y tablet) -->
+    <div class="logo-overlay text-center">
+      <img src="images/logob.png" alt="Barceló Logo" class="img-fluid" />
     </div>
 
-    <!-- Logo centrado sobre el carrusel -->
-    <div class="logo-overlay">
-      <img src="images/logob.png" alt="Barceló Guatemala City Logo" class="img-fluid">
-    </div>
-
-    <!-- CTA: Date una vuelta -->
-    <section id="cta" class="container py-5 text-center mt-auto">
-      <h2 class="fw-bold mb-5 text-white">Conócenos</h2>
+    <!-- CTA “Date una vuelta” -->
+    <section id="cta" class="container py-5 mt-auto text-center">
+      <h2 class="fw-bold mb-5 text-white">Date una vuelta</h2>
       <div class="row g-4">
         <div class="col-12 col-sm-6 col-md-3">
           <a href="habitacion1.html" class="text-decoration-none">
@@ -106,18 +136,25 @@
       </div>
     </section>
 
-    <!-- Footer siempre al final -->
+    <!-- Footer -->
     <footer id="contacto" class="bg-dark text-white py-4 text-center mt-auto">
       <div class="container">
-        <p>¿Listo para empezar? <a href="mailto:guatemalacity@barcelo.com" class="text-primary">Contáctanos</a></p>
+        <p>
+          ¿Listo para empezar?
+          <a href="mailto:guatemalacity@barcelo.com" class="text-primary">Contáctanos</a>
+        </p>
         <small>&copy; 2025 Barceló. Todos los derechos reservados.</small>
       </div>
     </footer>
 
   </div>
 
-  <!-- Scripts de Bootstrap y Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JS y Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+  ></script>
 </body>
 </html>
