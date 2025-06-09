@@ -1,0 +1,33 @@
+/* Variables y reset */
+:root {
+  --font: 'Roboto', sans-serif;
+  --primary: #0d6efd;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); }
+
+/* Hover scale para cards */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Top Bar */
+.bg-light.py-2.border-bottom { border-color: rgba(0, 0, 0, 0.1); }
+
+/* Navbar transparente y al hacer scroll */
+#mainNav { transition: background 0.3s ease; }
+#mainNav.scrolled { background: rgba(0, 0, 0, 0.85) !important; }
+
+/* Hero full-screen */
+header.carousel { height: 100vh; overflow: hidden; }
+.object-fit-cover { object-fit: cover; }
+.carousel-caption { backdrop-filter: blur(4px); }
+
+/* Sección Servicios */
+#servicios .border { border-color: rgba(13, 110, 253, 0.3); }
+
+/* Footer */
+footer a { text-decoration: none; }
