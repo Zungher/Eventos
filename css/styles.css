@@ -1,51 +1,30 @@
-/* Variables y reset */
-:root { --font: 'Roboto', sans-serif; --primary: #0d6efd; }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font); }
-
-/* Logo overlay */
-.logo-overlay img { max-height: 120px; }
-.logo-overlay { z-index: 30; /* Logo above overlay */ }
-
-/* increase logo size */
-
-/* Hover scale para cards */
-.hover-scale { transition: transform 0.3s ease; }
-.hover-scale:hover { transform: scale(1.05); }
-
-/* Top Bar */
-.bg-light.py-2.border-bottom { border-color: rgba(0, 0, 0, 0.1); }
-
-/* Hero full-screen */
-header.carousel { height: 100vh; overflow: hidden; position: relative; }
-
-/* Dark overlay for carousel slides */
-header.carousel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 10;
-  pointer-events: none; /* Allow clicks through the overlay */
-}
-.object-fit-cover { object-fit: cover; }
-.carousel-caption { backdrop-filter: blur(4px); }
-
-/* Bring captions and controls above overlay */
-.carousel-caption,
-.carousel-control-prev,
-.carousel-control-next,
-.carousel-indicators {
-  z-index: 20;
+/* ============================= */
+/* Variables y reset global      */
+/* ============================= */
+:root {
+  --font: 'Roboto', sans-serif;
+  --primary: #0d6efd;
 }
 
-/* Footer */
-footer a { text-decoration: none; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* Ajustes responsive para Top Bar */
+body {
+  font-family: var(--font);
+}
+
+/* ============================= */
+/* Top Bar                       */
+/* ============================= */
+.bg-light.py-2.border-bottom {
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
 @media (max-width: 576px) {
   .bg-light.py-2.border-bottom .container {
     flex-direction: column !important;
@@ -59,4 +38,99 @@ footer a { text-decoration: none; }
   .bg-light.py-2.border-bottom i {
     margin-right: 0.25rem;
   }
+}
+
+/* ============================= */
+/* Carrusel como fondo fijo      */
+/* ============================= */
+#heroCarousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0; /* debajo del contenido */
+}
+
+#heroCarousel .carousel-inner,
+#heroCarousel .carousel-item,
+#heroCarousel .carousel-item img {
+  width: 100%;
+  height: 100vh;
+}
+
+#heroCarousel .carousel-item img {
+  object-fit: cover;
+}
+
+/* Dark overlay sobre las imágenes */
+#heroCarousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1; /* sobre las imágenes */
+  pointer-events: none;
+}
+
+/* ============================= */
+/* Contenido superpuesto         */
+/* ============================= */
+.content-overlay {
+  position: relative;
+  z-index: 2;           /* encima del overlay */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;    /* para que footer quede abajo */
+}
+
+/* ============================= */
+/* Logo centrado                 */
+/* ============================= */
+.logo-overlay {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;          /* encima de todo */
+}
+
+.logo-overlay img {
+  max-height: 120px;
+}
+
+/* ============================= */
+/* Sección CTA: “Date una vuelta”*/
+/* ============================= */
+#cta {
+  margin-top: auto;    /* empuja hacia abajo si es necesario */
+  color: #fff;
+}
+
+#cta .card {
+  background: rgba(255, 255, 255, 0.8); /* semi-transparente para legibilidad */
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* Footer                        */
+/* ============================= */
+footer#contacto {
+  background: rgba(0, 0, 0, 0.7) !important; /* semitransparente */
+}
+
+/* ============================= */
+/* Utilidad: enlaces sin subrayado*/
+/* ============================= */
+a.text-decoration-none {
+  text-decoration: none !important;
 }
