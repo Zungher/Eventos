@@ -1,11 +1,8 @@
-/* ============================= */
-/* Variables y reset global      */
-/* ============================= */
+/* ============= Reset & Variables ============= */
 :root {
   --font: 'Roboto', sans-serif;
   --primary: #0d6efd;
 }
-
 *,
 *::before,
 *::after {
@@ -13,107 +10,80 @@
   margin: 0;
   padding: 0;
 }
-
 body {
   font-family: var(--font);
 }
 
-/* ============================= */
-/* Top Bar                       */
-/* ============================= */
-.bg-light.py-2.border-bottom {
-  border-color: rgba(0, 0, 0, 0.1);
+/* ============= Barra Superior ============= */
+.navbar .nav-link {
+  color: #000;
+}
+.navbar .nav-link:hover {
+  color: var(--primary);
+}
+.nav-logo {
+  max-height: 40px;
 }
 
-@media (max-width: 576px) {
-  .bg-light.py-2.border-bottom .container {
-    flex-direction: column !important;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  .bg-light.py-2.border-bottom .container > div {
-    width: 100%;
-    justify-content: center;
-  }
-  .bg-light.py-2.border-bottom i {
-    margin-right: 0.25rem;
-  }
-}
-
-/* ============================= */
-/* Carrusel como fondo fijo      */
-/* ============================= */
+/* ============= Carrusel de Fondo ============= */
 #heroCarousel {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 0; /* debajo del contenido */
+  z-index: 0;
 }
-
-#heroCarousel .carousel-inner,
 #heroCarousel .carousel-item,
 #heroCarousel .carousel-item img {
   width: 100%;
   height: 100vh;
 }
-
 #heroCarousel .carousel-item img {
   object-fit: cover;
 }
-
-/* Dark overlay sobre las imágenes */
+/* Overlay oscuro */
 #heroCarousel::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1; /* sobre las imágenes */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
   pointer-events: none;
 }
 
-/* ============================= */
-/* Contenido superpuesto         */
-/* ============================= */
+/* ============= Contenido Superpuesto ============= */
 .content-overlay {
   position: relative;
-  z-index: 2;           /* encima del overlay */
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;    /* para que footer quede abajo */
+  min-height: 100vh;
 }
 
-/* ============================= */
-/* Logo centrado                 */
-/* ============================= */
+/* ============= Logo Overlay ============= */
 .logo-overlay {
   position: absolute;
-  top: 80px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;          /* encima de todo */
+  z-index: 3;
 }
-
 .logo-overlay img {
   max-height: 120px;
 }
 
-/* ============================= */
-/* Sección CTA: “Date una vuelta”*/
-/* ============================= */
+/* ============= Sección CTA ============= */
 #cta {
-  margin-top: auto;    /* empuja hacia abajo si es necesario */
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+#cta h2 {
   color: #fff;
 }
-
 #cta .card {
-  background: rgba(255, 255, 255, 0.8); /* semi-transparente para legibilidad */
+  background: rgba(255,255,255,0.85);
 }
-
 .hover-scale {
   transition: transform 0.3s ease;
 }
@@ -121,16 +91,21 @@ body {
   transform: scale(1.05);
 }
 
-/* ============================= */
-/* Footer                        */
-/* ============================= */
+/* ============= Footer ============= */
 footer#contacto {
-  background: rgba(0, 0, 0, 0.7) !important; /* semitransparente */
+  background: rgba(0,0,0,0.7) !important;
 }
 
-/* ============================= */
-/* Utilidad: enlaces sin subrayado*/
-/* ============================= */
-a.text-decoration-none {
-  text-decoration: none !important;
+/* ============= Media Queries ============= */
+/* Móviles más pequeños */
+@media (max-width: 576px) {
+  .logo-overlay {
+    top: 50px;
+  }
+  #cta .card-body {
+    padding: 1.5rem;
+  }
+  .nav-logo {
+    max-height: 30px;
+  }
 }
