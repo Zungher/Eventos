@@ -1,4 +1,6 @@
-/* ============= Reset & Variables ============= */
+/* ============================= */
+/* Reset & Variables             */
+/* ============================= */
 :root {
   --font: 'Roboto', sans-serif;
   --primary: #0d6efd;
@@ -14,7 +16,9 @@ body {
   font-family: var(--font);
 }
 
-/* ============= Barra Superior ============= */
+/* ============================= */
+/* Barra Superior                */
+/* ============================= */
 .navbar .nav-link {
   color: #000;
 }
@@ -25,7 +29,9 @@ body {
   max-height: 40px;
 }
 
-/* ============= Carrusel de Fondo ============= */
+/* ============================= */
+/* Carrusel de Fondo             */
+/* ============================= */
 #heroCarousel {
   position: fixed;
   top: 0; left: 0;
@@ -37,8 +43,6 @@ body {
 #heroCarousel .carousel-item img {
   width: 100%;
   height: 100vh;
-}
-#heroCarousel .carousel-item img {
   object-fit: cover;
 }
 /* Overlay oscuro */
@@ -52,19 +56,25 @@ body {
   pointer-events: none;
 }
 
-/* ============= Contenido Superpuesto ============= */
+/* ============================= */
+/* Contenido Superpuesto         */
+/* ============================= */
 .content-overlay {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding: 1rem;
 }
 
-/* ============= Logo Overlay ============= */
+/* ============================= */
+/* Logo Overlay                  */
+/* ============================= */
+/* Subido otro ½ cm (~19px) */
 .logo-overlay {
   position: absolute;
-  top: 70px;
+  top: 30px;       /* antes 50px, ahora más arriba */
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -73,16 +83,22 @@ body {
   max-height: 120px;
 }
 
-/* ============= Sección CTA ============= */
+/* ============================= */
+/* Sección CTA                   */
+/* ============================= */
 #cta {
   margin-top: auto;
   margin-bottom: 2rem;
 }
 #cta h2 {
   color: #fff;
+  margin-bottom: 2rem;
 }
 #cta .card {
   background: rgba(255,255,255,0.85);
+}
+#cta .card-body {
+  padding: 2rem;
 }
 .hover-scale {
   transition: transform 0.3s ease;
@@ -91,21 +107,54 @@ body {
   transform: scale(1.05);
 }
 
-/* ============= Footer ============= */
+/* ============================= */
+/* Footer                        */
+/* ============================= */
 footer#contacto {
   background: rgba(0,0,0,0.7) !important;
+  padding: 1.5rem 0;
 }
 
-/* ============= Media Queries ============= */
-/* Móviles más pequeños */
+/* ============================= */
+/* Utilidades                    */
+/* ============================= */
+a.text-decoration-none {
+  text-decoration: none !important;
+}
+
+/* ============================= */
+/* Media Queries (MÓVIL)         */
+/* ============================= */
 @media (max-width: 576px) {
-  .logo-overlay {
-    top: 50px;
+  /* Ocultar captions del carrusel */
+  #heroCarousel .carousel-caption {
+    display: none !important;
   }
-  #cta .card-body {
-    padding: 1.5rem;
-  }
+  /* Ajustes en navbar */
   .nav-logo {
     max-height: 30px;
+  }
+  /* Padding interior reducido */
+  .content-overlay {
+    padding-top: 4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  /* Logo un poco más arriba */
+  .logo-overlay {
+    top: 10px;    /* antes 30px, ahora más arriba */
+  }
+  /* Padding de las tarjetas reducido */
+  #cta .card-body {
+    padding: 1.25rem;
+  }
+  /* Margen inferior del CTA */
+  #cta {
+    margin-bottom: 1.5rem;
+  }
+  /* Ocultar flechas del carrusel */
+  #heroCarousel .carousel-control-prev,
+  #heroCarousel .carousel-control-next {
+    display: none;
   }
 }
