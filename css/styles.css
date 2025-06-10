@@ -45,7 +45,6 @@ body {
   height: 100vh;
   object-fit: cover;
 }
-/* Overlay oscuro */
 #heroCarousel::before {
   content: "";
   position: absolute;
@@ -71,10 +70,9 @@ body {
 /* ============================= */
 /* Logo Overlay                  */
 /* ============================= */
-/* Subido otro ½ cm (~19px) */
 .logo-overlay {
   position: absolute;
-  top: 30px;       /* antes 50px, ahora más arriba */
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -89,6 +87,7 @@ body {
 #cta {
   margin-top: auto;
   margin-bottom: 2rem;
+  text-align: center;
 }
 #cta h2 {
   color: #fff;
@@ -96,9 +95,18 @@ body {
 }
 #cta .card {
   background: rgba(255,255,255,0.85);
+  margin: 0 auto;         /* centrado */
 }
 #cta .card-body {
   padding: 2rem;
+}
+#cta .card-body i {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+#cta .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0;
 }
 .hover-scale {
   transition: transform 0.3s ease;
@@ -123,38 +131,48 @@ a.text-decoration-none {
 }
 
 /* ============================= */
-/* Media Queries (MÓVIL)         */
+/* Media Queries (MÓVIL ≤576px)  */
 /* ============================= */
 @media (max-width: 576px) {
-  /* Ocultar captions del carrusel */
+  /* Ocultar captions */
   #heroCarousel .carousel-caption {
     display: none !important;
   }
-  /* Ajustes en navbar */
+  /* Navbar ajustada */
   .nav-logo {
     max-height: 30px;
   }
-  /* Padding interior reducido */
+  /* Overlay padding reducido */
   .content-overlay {
     padding-top: 4rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
-  /* Logo un poco más arriba */
+  /* Logo más arriba */
   .logo-overlay {
-    top: 10px;    /* antes 30px, ahora más arriba */
+    top: 30px;
   }
-  /* Padding de las tarjetas reducido */
-  #cta .card-body {
-    padding: 1.25rem;
-  }
-  /* Margen inferior del CTA */
-  #cta {
-    margin-bottom: 1.5rem;
-  }
-  /* Ocultar flechas del carrusel */
+  /* Ocultar flechas */
   #heroCarousel .carousel-control-prev,
   #heroCarousel .carousel-control-next {
     display: none;
+  }
+  /* Tarjetas más compactas */
+  #cta .card {
+    max-width: 60%;       /* ancho reducido */
+    margin-bottom: 0.5rem;
+  }
+  #cta .card-body {
+    padding: 0.5rem 0.75rem;
+  }
+  #cta .card-body i {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  #cta .card-title {
+    font-size: 0.875rem;
+  }
+  #cta {
+    margin-bottom: 1rem;
   }
 }
